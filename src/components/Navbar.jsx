@@ -1,0 +1,112 @@
+import { Search } from "@mui/icons-material";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
+import { Badge } from "@mui/material";
+import React from "react";
+import styled from "styled-components";
+
+const Container = styled.div`
+  height: 60px;
+  /* background-color: black; */
+`;
+
+const Wrapper = styled.div`
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+// Left side components
+
+const Left = styled.div`
+  /* width: 33.3%; */
+  flex: 1;
+  display: flex;
+  align-items: center;
+`;
+const Language = styled.span`
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const SearchContainer = styled.div`
+  border: 0.5px solid lightgray;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  padding: 6px;
+`;
+
+const Input = styled.input`
+  border: none;
+`;
+
+// Left side components
+
+// Center side components
+
+const Center = styled.div`
+  /* width: 33.3%; */
+  flex: 1;
+  text-align: center;
+`;
+
+const Logo = styled.h1`
+  font-weight: bold;
+  font-size: 50px;
+`;
+
+// Center side components
+
+// Right side components
+
+const Right = styled.div`
+  /* width: 33.3%; */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+
+const MenuItem = styled.div`
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 25px;
+`;
+
+// Right side components
+
+const Navbar = () => {
+  return (
+    <Container>
+      <Wrapper>
+        <Left>
+          <Language>
+            EN <ArrowDropDownOutlinedIcon />
+          </Language>
+          <SearchContainer>
+            <Input style={{ padding: "6px 0", outline: "none" }} />
+            <Search style={{ color: "gray", fontSize: "20px" }} />
+          </SearchContainer>
+        </Left>
+        <Center>
+          <Logo>A'More.</Logo>
+        </Center>
+        <Right>
+          <MenuItem>REGISTER</MenuItem>
+          <MenuItem>SIGN IN</MenuItem>
+          <MenuItem>
+            <Badge badgeContent={4} color="primary">
+              <ShoppingCartOutlinedIcon />
+            </Badge>
+          </MenuItem>
+        </Right>
+      </Wrapper>
+    </Container>
+  );
+};
+
+export default Navbar;
