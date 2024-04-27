@@ -37,7 +37,8 @@ const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   margin-left: 25px;
-  padding: 6px;
+  /* padding: 10px; */
+  /* border-radius: 20px; */
 `;
 
 const Input = styled.input`
