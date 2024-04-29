@@ -3,13 +3,14 @@ import styled from "styled-components";
 
 const Container = styled.div`
   flex: 1;
-  height: 40vh;
+  height: 70vh;
   margin: 3px;
   position: relative;
 `;
 const Image = styled.img`
   width: 100%;
   height: 100%;
+  object-fit: cover;
 `;
 const Info = styled.div`
   position: absolute;
@@ -22,6 +23,7 @@ const Info = styled.div`
   justify-content: center;
   flex-flow: column;
 `;
+
 const Title = styled.h1`
   color: #fff;
   margin-bottom: 20px;
