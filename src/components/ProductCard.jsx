@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { FavoriteBorderOutlined, Search } from "@mui/icons-material";
+import { formatCurrency } from "../utilities/formatCurrency";
 
 const Info = styled.div`
   opacity: 0;
@@ -17,8 +18,9 @@ const Info = styled.div`
   transition: all 0.5s ease;
   cursor: pointer;
 `;
+const Container = styled.div``;
 
-const Container = styled.div`
+const ImageContainer = styled.div`
   flex: 1;
   margin: 5px;
   min-width: 300px;
@@ -52,22 +54,38 @@ const Icon = styled.div`
     transform: scale(1.1);
   }
 `;
+const ItemInfo = styled.div`
+  margin: 5px;
+`;
+const ItemName = styled.p`
+  margin-bottom: 4px;
+  font-weight: 600;
+`;
+const ItemPrice = styled.p`
+  font-weight: 300;
+`;
 
 const ProductCard = ({ product }) => {
   return (
     <Container>
-      <Image src={product.img} width={300} />
-      <Info>
-        <Icon>
-          <ShoppingCartOutlinedIcon />
-        </Icon>
-        <Icon>
-          <Search />
-        </Icon>
-        <Icon>
-          <FavoriteBorderOutlined />
-        </Icon>
-      </Info>
+      <ImageContainer>
+        <Image src={product.img} width={300} />
+        <Info>
+          <Icon>
+            <ShoppingCartOutlinedIcon />
+          </Icon>
+          <Icon>
+            <Search />
+          </Icon>
+          <Icon>
+            <FavoriteBorderOutlined />
+          </Icon>
+        </Info>
+      </ImageContainer>
+      <ItemInfo>
+        <ItemName>{product.name}</ItemName>
+        <ItemPrice>{formatCurrency(product.price)}</ItemPrice>
+      </ItemInfo>
     </Container>
   );
 };

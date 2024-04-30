@@ -11,6 +11,7 @@ const Container = styled.div`
   height: 30vh;
   display: flex;
   padding: 20px;
+  padding-left: 100px;
 `;
 // Left
 const Left = styled.div`
@@ -18,6 +19,7 @@ const Left = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: center;
+  padding-left: 30px;
 `;
 const Logo = styled.h1`
   font-size: 50px;
@@ -46,6 +48,7 @@ const Icon = styled.div`
 // Center
 const Center = styled.div`
   flex: 1;
+  padding-left: 30px;
 `;
 const Title = styled.h3`
   margin-bottom: 30px;
@@ -73,6 +76,7 @@ const ListItem = styled.li`
 // Right
 const Right = styled.div`
   flex: 1;
+  padding-left: 30px;
 `;
 const ContactItem = styled.div`
   display: flex;
