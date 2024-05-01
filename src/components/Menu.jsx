@@ -21,7 +21,7 @@ const MenuItem = styled.li`
   text-align: center;
   display: flex;
   align-items: center;
-  margin-right: 100px;
+  margin-right: 50px;
   height: 100%;
   padding: 0 4px;
   &:hover {
