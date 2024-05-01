@@ -4,6 +4,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { FavoriteBorderOutlined, Search } from "@mui/icons-material";
 import { formatCurrency } from "../utilities/formatCurrency";
 import { useNavigate } from "react-router-dom";
+import { mobile } from "../utilities/responsive";
 
 const Info = styled.div`
   opacity: 0;
@@ -19,7 +20,9 @@ const Info = styled.div`
   transition: all 0.5s ease;
   cursor: pointer;
 `;
-const Container = styled.div``;
+const Container = styled.div`
+  ${mobile({ display: "flex", flexFlow: "column", alignItems: "center" })}
+`;
 
 const ImageContainer = styled.div`
   flex: 1;
@@ -73,7 +76,7 @@ const ProductCard = ({ product }) => {
     navigate("/detail", { state: product });
   };
   return (
-    <Container>
+    <Container onClick={handleNavigate}>
       <ImageContainer>
         <Image src={product.img} width={300} />
         <Info>

@@ -6,20 +6,24 @@ import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { formatCurrency } from "../utilities/formatCurrency";
 import Menu from "../components/Menu";
+import { mobile } from "../utilities/responsive";
 
 const Container = styled.div``;
 const Title = styled.h1`
   margin: 20px;
+  ${mobile({ textAlign: "center" })}
 `;
 const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexFlow: "column", justifyContent: "center" })}
 `;
 const Filter = styled.div`
   margin: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  ${mobile({ margin: "10px" })}
 `;
 
 const FilterText = styled.span`

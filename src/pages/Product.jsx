@@ -8,12 +8,14 @@ import { formatCurrency } from "../utilities/formatCurrency";
 import Newsletter from "../components/Newsletter";
 import { Add, Remove } from "@mui/icons-material";
 import { useLocation } from "react-router-dom";
+import { mobile } from "../utilities/responsive";
 
 const Container = styled.div``;
 const ItemContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 50px;
+  ${mobile({ flexFlow: "column", justifyContent: "center" })}
 `;
 
 const ImageContainer = styled.div`
@@ -21,11 +23,13 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${mobile({ flexFlow: "column" })}
 `;
 const Image = styled.img`
   height: 90vh;
   width: 100%;
   object-fit: cover;
+  ${mobile({ height: "30vh" })}
 `;
 
 const InfoContainer = styled.div`
@@ -34,14 +38,17 @@ const InfoContainer = styled.div`
   flex-flow: column;
   gap: 30px;
   padding: 0 50px;
+  ${mobile({ flexFlow: "column" })}
 `;
 const ItemName = styled.p`
   font-size: 40px;
   font-weight: 600;
+  ${mobile({ alignItems: "center", fontSize: "30px" })}
 `;
 const ItemDesc = styled.p`
   font-size: 24px;
   font-weight: 300;
+  ${mobile({ fontSize: "12px" })}
 `;
 const ItemPrice = styled.p`
   font-size: 40px;
@@ -51,7 +58,9 @@ const TitleMaterial = styled.p`
   font-style: italic;
   font-weight: 500;
 `;
-const ListMaterials = styled.ul``;
+const ListMaterials = styled.ul`
+  ${mobile({ paddingLeft: "20px" })}
+`;
 const ItemMaterial = styled.li`
   font-weight: 300;
 `;
@@ -90,6 +99,8 @@ const AddToCartButton = styled.button`
   border: none;
   font-size: 16px;
   font-weight: 500;
+  ${mobile({ padding: "4px 10px", fontSize: "10px" })}
+
   &:hover {
     cursor: pointer;
     background-color: #3a8787;

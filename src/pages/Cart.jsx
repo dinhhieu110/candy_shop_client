@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import { Add, Remove } from "@mui/icons-material";
 import Newsletter from "../components/Newsletter";
 import { useNavigate } from "react-router-dom";
+import { mobile } from "../utilities/responsive";
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -20,6 +21,7 @@ const Top = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  ${mobile({ padding: "0" })}
 `;
 
 const TopBtn = styled.button`
@@ -34,16 +36,19 @@ const TopBtn = styled.button`
 const TopTexts = styled.div`
   display: flex;
   gap: 20px;
+  ${mobile({ display: "none" })}
 `;
 
 const TopText = styled.p`
   text-decoration: underline;
   cursor: pointer;
+  ${mobile({ fontSize: "12px" })}
 `;
 
 const Bottom = styled.div`
   display: flex;
   padding: 20px;
+  ${mobile({ flexFlow: "column" })}
 `;
 
 const Info = styled.div`
@@ -52,6 +57,7 @@ const Info = styled.div`
 
 const Product = styled.div`
   display: flex;
+  ${mobile({ flexFlow: "column", alignItems: "center", gap: "10px" })}
 `;
 const ProductDetail = styled.div`
   flex: 4;
@@ -63,6 +69,7 @@ const Image = styled.img`
   width: 200px;
   height: 200px;
   object-fit: cover;
+  ${mobile({ width: "120px", height: "150px" })}
 `;
 const Details = styled.div`
   display: flex;
@@ -70,10 +77,15 @@ const Details = styled.div`
   flex-flow: column;
   justify-content: center;
   gap: 30px;
+  ${mobile({ gap: "10px" })}
 `;
 const ProductName = styled.p``;
-const ProductDesc = styled.p``;
-const ProductID = styled.p``;
+const ProductDesc = styled.p`
+  ${mobile({ display: "none" })}
+`;
+const ProductID = styled.p`
+  ${mobile({ display: "none" })}
+`;
 const ProductMaterials = styled.p``;
 
 const PriceDetail = styled.div`
@@ -138,6 +150,8 @@ const BottomBtn = styled.button`
   background-color: #000;
   color: #fff;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
 `;
 
 const Cart = () => {
@@ -218,6 +232,7 @@ const Cart = () => {
                 <Price>130.000</Price>
               </PriceDetail>
             </Product>
+            <Hr />
           </Info>
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { mobile } from "../utilities/responsive";
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -10,12 +11,22 @@ const Container = styled.div`
 
 const AnimationContainer = styled.div`
   flex: 3;
+  ${mobile({
+    display: "none",
+  })}
 `;
 
 const RegisterContainer = styled.div`
   flex: 7;
   display: flex;
   align-items: center;
+  ${mobile({
+    width: "100%",
+    display: "flex",
+    flexFlow: "column",
+    alignItems: "center",
+    padding: "30px",
+  })}
 `;
 
 const RegisterForm = styled.form`
@@ -26,6 +37,13 @@ const RegisterForm = styled.form`
   display: flex;
   flex-flow: column;
   gap: 10px;
+  ${mobile({
+    margin: "0",
+    padding: "30px",
+    // alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+  })}
 `;
 
 const Title = styled.h2`
