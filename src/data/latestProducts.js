@@ -1,4 +1,4 @@
-export const popularProducts = [
+export const latestProducts = [
   {
     id: 1,
     img: "./images/products/product1.jpg",

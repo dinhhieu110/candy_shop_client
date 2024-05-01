@@ -1,11 +1,18 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
   flex: 1;
-  height: 70vh;
+  height: 55vh;
   margin: 3px;
   position: relative;
+  transition: all 0.5s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    z-index: 2;
+  }
 `;
 const Image = styled.img`
   width: 100%;
@@ -45,7 +52,14 @@ const CategoryCard = ({ item }) => {
       <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
-        <Button>Shop Now</Button>
+        <Button>
+          <NavLink
+            to={"/shop"}
+            style={{ textDecoration: "none", color: "#000" }}
+          >
+            SHOP NOW
+          </NavLink>
+        </Button>
       </Info>
     </Container>
   );

@@ -4,6 +4,7 @@ import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined
 import { Badge } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
@@ -94,7 +95,14 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>A'More.</Logo>
+          <Logo>
+            <NavLink
+              to={"/home"}
+              style={{ textDecoration: "none", color: "#000" }}
+            >
+              A'More.
+            </NavLink>
+          </Logo>
         </Center>
         <Right>
           <MenuItem>REGISTER</MenuItem>

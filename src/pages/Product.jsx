@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { formatCurrency } from "../utilities/formatCurrency";
 import Newsletter from "../components/Newsletter";
 import { Add, Remove } from "@mui/icons-material";
+import { useLocation } from "react-router-dom";
 
 const Container = styled.div``;
 const ItemContainer = styled.div`
@@ -22,7 +23,7 @@ const ImageContainer = styled.div`
   justify-content: center;
 `;
 const Image = styled.img`
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   object-fit: cover;
 `;
@@ -96,28 +97,25 @@ const AddToCartButton = styled.button`
 `;
 
 const Product = () => {
+  window.scrollTo(0, 0);
+  const product = useLocation().state;
   return (
     <Container>
       <Navbar />
       <Announcement />
       <ItemContainer>
         <ImageContainer>
-          <Image src="./images/products/product1.jpg"></Image>
+          <Image src={product.img}></Image>
         </ImageContainer>
         <InfoContainer>
-          <ItemName>Flower Name</ItemName>
-          <ItemDesc>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-            fugiat, at molestias magni nihil iusto. Itaque molestias dolorum
-            ipsam repellendus dolores cumque quaerat perferendis incidunt quod
-            voluptatem rerum, mollitia sequi.
-          </ItemDesc>
-          <ItemPrice>{formatCurrency(240000)}</ItemPrice>
+          <ItemName>{product.name}</ItemName>
+          <ItemDesc>{product.desc}</ItemDesc>
+          <ItemPrice>{formatCurrency(product.price)}</ItemPrice>
           <TitleMaterial>This set includes:</TitleMaterial>
           <ListMaterials>
-            <ItemMaterial>Lavender Roses</ItemMaterial>
-            <ItemMaterial>Lavender Roses</ItemMaterial>
-            <ItemMaterial>Lavender Roses</ItemMaterial>
+            {product.materials.map((m) => (
+              <ItemMaterial>{m}</ItemMaterial>
+            ))}
           </ListMaterials>
           <TextNote>
             Kindly be advised that the featured arrangement will be provided,

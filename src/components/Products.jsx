@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { popularProducts } from "../data/popularProducts";
+import { latestProducts } from "../data/latestProducts";
 import ProductCard from "./ProductCard";
 
 const Container = styled.div`
@@ -13,7 +13,7 @@ const Container = styled.div`
 const Products = () => {
   return (
     <Container>
-      {popularProducts.map((p) => (
+      {latestProducts.map((p) => (
         <ProductCard key={p.id} product={p} />
       ))}
     </Container>

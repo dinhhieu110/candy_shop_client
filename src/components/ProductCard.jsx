@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { FavoriteBorderOutlined, Search } from "@mui/icons-material";
 import { formatCurrency } from "../utilities/formatCurrency";
+import { useNavigate } from "react-router-dom";
 
 const Info = styled.div`
   opacity: 0;
@@ -66,6 +67,11 @@ const ItemPrice = styled.p`
 `;
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate("/detail", { state: product });
+  };
   return (
     <Container>
       <ImageContainer>
@@ -74,7 +80,7 @@ const ProductCard = ({ product }) => {
           <Icon>
             <ShoppingCartOutlinedIcon />
           </Icon>
-          <Icon>
+          <Icon onClick={handleNavigate}>
             <Search />
           </Icon>
           <Icon>

@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-import Announcement from "../components/Announcement";
 import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { formatCurrency } from "../utilities/formatCurrency";
+import Menu from "../components/Menu";
 
 const Container = styled.div``;
 const Title = styled.h1`
@@ -37,10 +37,11 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const ProductList = () => {
+  window.scrollTo(0, 0);
   return (
     <Container>
       <Navbar />
-      <Announcement />
+      <Menu />
       <Title>Latest Products</Title>
       <FilterContainer>
         <Filter>

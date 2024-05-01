@@ -11,7 +11,6 @@ const Container = styled.div`
   height: 30vh;
   display: flex;
   padding: 20px;
-  padding-left: 100px;
 `;
 // Left
 const Left = styled.div`
